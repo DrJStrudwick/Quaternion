@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning].
 ### Added
 
 - added license
+- added code of conduct
 
 ## [0.0.1] - 2024-06-20
 
