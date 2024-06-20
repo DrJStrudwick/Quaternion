@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning].
 - added license
 - added code of conduct
 - added initial folder structure
+- added initial vscode settings
 
 ## [0.0.1] - 2024-06-20
 
