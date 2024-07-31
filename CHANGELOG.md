@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning].
 - added code of conduct
 - added initial folder structure
 - added initial vscode settings
+- added poetry init
 
 ## [0.0.1] - 2024-06-20
 

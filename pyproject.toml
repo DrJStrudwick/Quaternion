@@ -1,0 +1,14 @@
+[tool.poetry]
+name = "quaternion"
+version = "0.1.0"
+description = "A package for using quaternions"
+authors = ["James Strudwick <James.Strudwick@ibm.com>"]
+license = "MIT"
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
