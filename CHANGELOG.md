@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning].
 - added initial folder structure
 - added initial vscode settings
 - added poetry init
+- added configured testing suite
 
 ## [0.0.1] - 2024-06-20
 

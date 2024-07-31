@@ -1,0 +1,6 @@
+[run]
+omit = */tests/*
+skip_empty = True
+
+[report]
+fail_under = 80
