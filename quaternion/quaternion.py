@@ -34,15 +34,15 @@ class Quaternion:
         TypeError
             Is raised if any of the arguments are not an int or float
         """
-        self.x = x
-        self.i = i
-        self.j = j
-        self.k = k
-
         # check input types
         for key, key_type in inspect.get_annotations(self.__init__).items():
             if not isinstance(locals()[key], eval(key_type)):
                 raise TypeError(f"{key} must be {key_type}")
+
+        self.x = round(x, 16)
+        self.i = round(i, 16)
+        self.j = round(j, 16)
+        self.k = round(k, 16)
 
     def _typecheck(self, other: any):
         """Checks if another provided object is an instance of this class
@@ -137,7 +137,6 @@ class Quaternion:
         Quaternion
             The rsulting quaternion
         """
-        # FIXME: test case is failing, appears to be some sort of rounding error
 
         # check other is a Quaternion
         self._typecheck(other)
