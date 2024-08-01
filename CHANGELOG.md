@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning].
   - added `__init__` method
   - added `_typecheck` method
   - added `__eq__` method
+  - added `__str__` method
 
 ## [0.0.1] - 2024-06-20
 

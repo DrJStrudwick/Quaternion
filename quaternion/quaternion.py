@@ -87,3 +87,19 @@ class Quaternion:
             and self.k == value.k
         )
         return is_equal
+
+    def __str__(self) -> str:
+        """Create the string representation of this quaternion
+
+        Returns
+        -------
+        str
+            The string representation of the quaternion
+        """
+        # return the string representing this quaternion
+        return (
+            f"{self.x}"
+            f"{'+' if self.i>=0 else ''}{self.i}i"
+            f"{'+' if self.j>=0 else ''}{self.j}j"
+            f"{'+' if self.k>=0 else ''}{self.k}k"
+        )

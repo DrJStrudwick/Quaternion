@@ -48,3 +48,8 @@ class TestQuaternion:
         assert quaternion_unit_1 == quaternion_unit_2
         # assert that two different ones work
         assert quaternion_unit_1 != quaternion_zero
+
+    def test_str(self):
+        """Test that the str method works"""
+        # assert that the str rep is as expected
+        assert str(Quaternion(0, 0.2, -1, 1)) == "0+0.2i-1j+1k"
