@@ -28,9 +28,23 @@ class TestQuaternion:
             Quaternion(**vals)
 
     def test__typecheck(self):
-        q1 = Quaternion(**unit_quaternion())
+        quaternion = Quaternion(**unit_quaternion())
 
         with pytest.raises(NotImplementedError, match="unsupported operation for: "):
-            q1._typecheck(dict())
+            quaternion._typecheck(dict())
 
-        assert q1._typecheck(Quaternion()) is None
+        assert quaternion._typecheck(Quaternion()) is None
+
+    def test_eq(self):
+        """Test that the equal method works"""
+        # get two instances of the same quaternion
+        quaternion_unit_1 = Quaternion(**unit_quaternion())
+        quaternion_unit_2 = Quaternion(**unit_quaternion())
+
+        # get a different quaternion
+        quaternion_zero = Quaternion()
+
+        # assert the two that the two that are the same work
+        assert quaternion_unit_1 == quaternion_unit_2
+        # assert that two different ones work
+        assert quaternion_unit_1 != quaternion_zero

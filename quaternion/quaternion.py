@@ -62,3 +62,28 @@ class Quaternion:
                 "unsupported operation for: "
                 f"'{type(self).__name__}' and '{type(other).__name__}'"
             )
+
+    def __eq__(self, value: Quaternion) -> bool:
+        """checks if this quaternion is equal to another
+
+        Parameters
+        ----------
+        value : Quaternion
+            the other quaternion that this is compared against
+
+        Returns
+        -------
+        bool
+            Return True if the two quaternions are equal and False if not
+        """
+        # check that the other value is an appropriate type
+        self._typecheck(value)
+
+        # perform equality check
+        is_equal = (
+            self.x == value.x
+            and self.i == value.i
+            and self.j == value.j
+            and self.k == value.k
+        )
+        return is_equal
