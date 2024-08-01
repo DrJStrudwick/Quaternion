@@ -114,3 +114,8 @@ class TestQuaternion:
         assert (quaternion_1 * quaternion_2) != (quaternion_2 * quaternion_1)
         # assert correct scalar
         assert (quaternion_1 * 2) == Quaternion(2, 4, 6, 8)
+
+    def test_conjugate(self):
+        """Test that conjugation works correctly"""
+        # assert correct conjugation
+        assert Quaternion(**unit_quaternion()).conjugate() == Quaternion(1, -1, -1, -1)

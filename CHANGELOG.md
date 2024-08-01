@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning].
   - added `__add__` method
   - added `__sub__` method
   - added `__mul__` and `__rmul__` method
+  - added `conjugate` method
 
 ## [0.0.1] - 2024-06-20
 

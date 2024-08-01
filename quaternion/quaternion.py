@@ -243,3 +243,15 @@ class Quaternion:
         else:
             # otherwise raise error
             raise NotImplementedError
+
+    def conjugate(self) -> Quaternion:
+        """Produce the conjugate of the this quaternion
+
+        Returns
+        -------
+        Quaternion
+            the corresponding conjugate quaternion
+        """
+
+        # conjugate is ever non real part negated
+        return Quaternion(self.x, -self.i, -self.j, -self.k)
