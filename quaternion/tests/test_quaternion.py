@@ -74,3 +74,33 @@ class TestQuaternion:
 
         # assert addition is correct
         assert (quaternion_2 - quaternion_unit) == quaternion_1
+
+    def test_rmul(self):
+        """Tests that the rmul works"""
+
+        # init test quaternions
+        quaternion_unit = Quaternion(**unit_quaternion())
+        quaternion_2 = Quaternion(2, 2, 2, 2)
+        quaternion_3 = Quaternion(0.2, 0.2, 0.2, 0.2)
+
+        # check correct multiplication
+        assert (2 * quaternion_unit) == quaternion_2
+        assert (0.2 * quaternion_unit) == quaternion_3
+
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            dict() * quaternion_unit
+
+    def test_mul(mul):
+        "Test that __mul__ works"
+
+        # init quaternions
+        quaternion_1 = Quaternion(1, 2, 3, 4)
+        quaternion_2 = Quaternion(4, 3, 2, 1)
+        quaternion_3 = Quaternion(-12, 6, 24, 12)
+        # assert correct output
+        assert (quaternion_1 * quaternion_2) == quaternion_3
+        # assert non commute
+        assert (quaternion_1 * quaternion_2) != (quaternion_2 * quaternion_1)
+        # assert correct scalar
+        assert (quaternion_1 * 2) == Quaternion(2, 4, 6, 8)

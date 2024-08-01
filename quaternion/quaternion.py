@@ -144,3 +144,89 @@ class Quaternion:
         return type(self)(
             self.x - other.x, self.i - other.i, self.j - other.j, self.k - other.k
         )
+
+    def __mul__(self, other: Quaternion) -> Quaternion:
+        """Multiply two quaternions
+
+        Parameters
+        ----------
+        other : Quaternion
+            the other quaternion to be multiplied with
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaterion
+        """
+
+        # check if being multiplied by a scalar, if so quick mult
+        if isinstance(other, int | float):
+            return Quaternion(
+                other * self.x, other * self.i, other * self.j, other * self.k
+            )
+        # otherwise check other is a quaternion
+        self._typecheck(other)
+
+        # perform x component calculation
+        quaternion_x_component = Quaternion(
+            self.x * other.x,
+            self.x * other.i,
+            self.x * other.j,
+            self.x * other.k,
+        )
+        # perform i component calculation
+        quaternion_i_component = Quaternion(
+            -self.i * other.i,
+            self.i * other.x,
+            -self.i * other.k,
+            self.i * other.j,
+        )
+        # perform j component calculation
+        quaternion_j_component = Quaternion(
+            -self.j * other.j,
+            self.j * other.k,
+            self.j * other.x,
+            -self.j * other.i,
+        )
+        # perform k component calculation
+        quaternion_k_component = Quaternion(
+            -self.k * other.k,
+            -self.k * other.j,
+            self.k * other.i,
+            self.k * other.x,
+        )
+        # combine and return
+        return (
+            quaternion_x_component
+            + quaternion_i_component
+            + quaternion_j_component
+            + quaternion_k_component
+        )
+
+    def __rmul__(self, other: int | float) -> Quaternion:
+        """multiply from the right, only for scalars
+
+        Parameters
+        ----------
+        other : int | float
+            The scalar to be multiplied with this quaternion
+
+        Returns
+        -------
+        Quaternion
+            The resulting multiplication
+
+        Raises
+        ------
+        NotImplementedError
+            Is raised if the other object is not a int or a float
+        """
+
+        # check if scalar, if so do calculation
+        if isinstance(other, int | float):
+            return Quaternion(
+                other * self.x, other * self.i, other * self.j, other * self.k
+            )
+        else:
+            # otherwise raise error
+            raise NotImplementedError

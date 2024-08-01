@@ -23,6 +23,7 @@ and this project adheres to [Semantic Versioning].
   - added `__str__` method
   - added `__add__` method
   - added `__sub__` method
+  - added `__mul__` and `__rmul__` method
 
 ## [0.0.1] - 2024-06-20
 
