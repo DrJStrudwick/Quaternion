@@ -17,7 +17,8 @@ and this project adheres to [Semantic Versioning].
 - added configured testing suite
 - added juypter for development
 - added initial Quaternion Class
-  - created init method
+  - created `__init__` method
+  - created `_typecheck` method
 
 ## [0.0.1] - 2024-06-20
 

@@ -44,7 +44,19 @@ class Quaternion:
             if not isinstance(locals()[key], eval(key_type)):
                 raise TypeError(f"{key} must be {key_type}")
 
-    def __typecheck(self, other: any) -> None:
+    def _typecheck(self, other: any):
+        """Checks if another provided object is an instance of this class
+
+        Parameters
+        ----------
+        other : any
+            The other object to be checked
+
+        Raises
+        ------
+        NotImplementedError
+            Is raised if the other object is not an instance of this class
+        """
         if not isinstance(other, type(self)):
             raise NotImplementedError(
                 "unsupported operation for: "

@@ -26,3 +26,11 @@ class TestQuaternion:
             vals = unit_quaternion()
             vals[entry] = dict()
             Quaternion(**vals)
+
+    def test__typecheck(self):
+        q1 = Quaternion(**unit_quaternion())
+
+        with pytest.raises(NotImplementedError, match="unsupported operation for: "):
+            q1._typecheck(dict())
+
+        assert q1._typecheck(Quaternion()) is None
