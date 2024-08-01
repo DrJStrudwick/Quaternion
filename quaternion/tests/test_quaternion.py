@@ -64,3 +64,14 @@ class TestQuaternion:
 
         # assert addition is correct
         assert (quaternion_1 + quaternion_unit) == quaternion_2
+
+    @pytest.mark.xfail
+    def test_sub(self):
+        """Test that the sub method works"""
+        # init quaternions
+        quaternion_1 = Quaternion(0, 1, -1, 0.2)
+        quaternion_unit = Quaternion(**unit_quaternion())
+        quaternion_2 = Quaternion(1, 2, 0, 1.2)
+
+        # assert addition is correct
+        assert (quaternion_2 - quaternion_unit) == quaternion_1

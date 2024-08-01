@@ -22,6 +22,7 @@ and this project adheres to [Semantic Versioning].
   - added `__eq__` method
   - added `__str__` method
   - added `__add__` method
+  - added `__sub__` method *NOTE* contains bug to be fixed
 
 ## [0.0.1] - 2024-06-20
 

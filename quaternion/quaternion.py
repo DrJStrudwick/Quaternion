@@ -123,3 +123,25 @@ class Quaternion:
         return type(self)(
             self.x + other.x, self.i + other.i, self.j + other.j, self.k + other.k
         )
+
+    def __sub__(self, other: Quaternion) -> Quaternion:
+        """Subtract two quaternions
+
+        Parameters
+        ----------
+        other : Quaternion
+            The other quaternion to be subracted from this one
+
+        Returns
+        -------
+        Quaternion
+            The rsulting quaternion
+        """
+        # FIXME: test case is failing, appears to be some sort of rounding error
+
+        # check other is a Quaternion
+        self._typecheck(other)
+        # perform subtration and return
+        return type(self)(
+            self.x - other.x, self.i - other.i, self.j - other.j, self.k - other.k
+        )
