@@ -15,6 +15,9 @@ and this project adheres to [Semantic Versioning].
 - added initial vscode settings
 - added poetry init
 - added configured testing suite
+- added juypter for development
+- added initial Quaternion Class
+  - created init method
 
 ## [0.0.1] - 2024-06-20
 
