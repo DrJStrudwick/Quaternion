@@ -96,7 +96,7 @@ class TestQuaternion:
         with pytest.raises(NotImplementedError):
             dict() * quaternion_unit
 
-    def test_mul(mul):
+    def test_mul(self):
         "Test that __mul__ works"
 
         # init quaternions
