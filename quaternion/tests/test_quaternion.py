@@ -54,6 +54,11 @@ class TestQuaternion:
         # assert that the str rep is as expected
         assert str(Quaternion(0, 0.2, -1, 1)) == "0+0.2i-1j+1k"
 
+    def test_repr(self):
+        """Test that the repr method works"""
+        # assert that the repr rep is as expected
+        assert repr(Quaternion(-12, 6, 24, 12)) == "Quaternion(x=-12, i=6, j=24, k=12)"
+
     def test_add(self):
         """Test that the add method works"""
 

@@ -104,6 +104,18 @@ class Quaternion:
             f"{'+' if self.k>=0 else ''}{self.k}k"
         )
 
+    def __repr__(self) -> str:
+        """Create the repr for this quaternion
+
+        Returns
+        -------
+        str
+            The repr for this quaternion
+        """
+
+        # Produce the repr
+        return f"{type(self).__name__}(x={self.x}, i={self.i}, j={self.j}, k={self.k})"
+
     def __add__(self, other: Quaternion) -> Quaternion:
         """Add two quaternions together
 
