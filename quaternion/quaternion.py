@@ -103,3 +103,23 @@ class Quaternion:
             f"{'+' if self.j>=0 else ''}{self.j}j"
             f"{'+' if self.k>=0 else ''}{self.k}k"
         )
+
+    def __add__(self, other: Quaternion) -> Quaternion:
+        """Add two quaternions together
+
+        Parameters
+        ----------
+        other : Quaternion
+            The other quaternion to be added
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaternion from the addition
+        """
+        # check other is a Quaternion
+        self._typecheck(other)
+        # Perform addition
+        return type(self)(
+            self.x + other.x, self.i + other.i, self.j + other.j, self.k + other.k
+        )

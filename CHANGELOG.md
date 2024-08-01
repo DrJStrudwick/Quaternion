@@ -21,6 +21,7 @@ and this project adheres to [Semantic Versioning].
   - added `_typecheck` method
   - added `__eq__` method
   - added `__str__` method
+  - added `__add__` method
 
 ## [0.0.1] - 2024-06-20
 

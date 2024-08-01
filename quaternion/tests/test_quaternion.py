@@ -53,3 +53,14 @@ class TestQuaternion:
         """Test that the str method works"""
         # assert that the str rep is as expected
         assert str(Quaternion(0, 0.2, -1, 1)) == "0+0.2i-1j+1k"
+
+    def test_add(self):
+        """Test that the add method works"""
+
+        # init quaternions
+        quaternion_1 = Quaternion(0, 1, -1, 0.2)
+        quaternion_unit = Quaternion(**unit_quaternion())
+        quaternion_2 = Quaternion(1, 2, 0, 1.2)
+
+        # assert addition is correct
+        assert (quaternion_1 + quaternion_unit) == quaternion_2
