@@ -43,6 +43,7 @@ class Quaternion:
         self.i = round(i, 16)
         self.j = round(j, 16)
         self.k = round(k, 16)
+        self.norm = self.x**2 + self.i**2 + self.j**2 + self.k**2
 
     def _typecheck(self, other: any):
         """Checks if another provided object is an instance of this class

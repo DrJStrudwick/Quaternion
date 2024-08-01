@@ -27,6 +27,11 @@ class TestQuaternion:
             vals[entry] = dict()
             Quaternion(**vals)
 
+    def test_init_norm(self):
+        """Test the norm is initialised correctly"""
+        # assert that the norm is as expected
+        assert Quaternion(**unit_quaternion()).norm == 4
+
     def test__typecheck(self):
         quaternion = Quaternion(**unit_quaternion())
 
