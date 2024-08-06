@@ -160,12 +160,12 @@ class Quaternion:
             self.x - other.x, self.i - other.i, self.j - other.j, self.k - other.k
         )
 
-    def __mul__(self, other: Quaternion) -> Quaternion:
-        """Multiply two quaternions
+    def __mul__(self, other: Quaternion | int | float) -> Quaternion:
+        """Multiply either two quaternions or quaternions & a scalar
 
         Parameters
         ----------
-        other : Quaternion
+        other : Quaternion | int | float
             the other quaternion to be multiplied with
 
         Returns
