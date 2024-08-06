@@ -74,6 +74,7 @@ class TestQuaternion:
 
         # assert addition is correct
         assert (quaternion_1 + quaternion_unit) == quaternion_2
+        assert (quaternion_1 + 1) == Quaternion(1, 1, -1, 0.2)
 
     def test_sub(self):
         """Test that the sub method works"""
@@ -84,6 +85,7 @@ class TestQuaternion:
 
         # assert addition is correct
         assert (quaternion_2 - quaternion_unit) == quaternion_1
+        assert (quaternion_1 - 1) == Quaternion(-1, 1, -1, 0.2)
 
     def test_rmul(self):
         """Tests that the rmul works"""

@@ -119,19 +119,22 @@ class Quaternion:
         # Produce the repr
         return f"{type(self).__name__}(x={self.x}, i={self.i}, j={self.j}, k={self.k})"
 
-    def __add__(self, other: Quaternion) -> Quaternion:
-        """Add two quaternions together
+    def __add__(self, other: Quaternion | int | float) -> Quaternion:
+        """Add two quaternions together or a quaternion and a scalar
 
         Parameters
         ----------
-        other : Quaternion
-            The other quaternion to be added
+        other : Quaternion | int | float
+            The other quaternion/scalar to be added
 
         Returns
         -------
         Quaternion
             The resulting quaternion from the addition
         """
+        # if the other object is a scalar
+        if isinstance(other, int | float):
+            return type(self)(self.x + other, self.i, self.j, self.k)
         # check other is a Quaternion
         self._typecheck(other)
         # Perform addition
@@ -139,19 +142,22 @@ class Quaternion:
             self.x + other.x, self.i + other.i, self.j + other.j, self.k + other.k
         )
 
-    def __sub__(self, other: Quaternion) -> Quaternion:
-        """Subtract two quaternions
+    def __sub__(self, other: Quaternion | int | float) -> Quaternion:
+        """Subtract two quaternions or a quaternion and a scalar
 
         Parameters
         ----------
-        other : Quaternion
-            The other quaternion to be subracted from this one
+        other : Quaternion | int | float
+            The other quaternion/scalar to be subracted from this quaternion
 
         Returns
         -------
         Quaternion
-            The rsulting quaternion
+            The resulting quaternion
         """
+        # if the other object is a scalar
+        if isinstance(other, int | float):
+            return type(self)(self.x - other, self.i, self.j, self.k)
 
         # check other is a Quaternion
         self._typecheck(other)
