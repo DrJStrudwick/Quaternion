@@ -79,6 +79,18 @@ class TestQuaternion:
         with pytest.raises(NotImplementedError):
             quaternion_1 + dict()
 
+    def test_radd(self):
+        """Test that the radd method works"""
+
+        # init quaternions
+        quaternion_1 = Quaternion(0, 1, -1, 0.2)
+
+        # assert addition is correct
+        assert (1 + quaternion_1) == Quaternion(1, 1, -1, 0.2)
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            dict() + quaternion_1
+
     def test_sub(self):
         """Test that the sub method works"""
         # init quaternions
@@ -93,21 +105,16 @@ class TestQuaternion:
         with pytest.raises(NotImplementedError):
             quaternion_1 - dict()
 
-    def test_rmul(self):
-        """Tests that the rmul works"""
+    def test_rsub(self):
+        """Test that the rsub method works"""
+        # init quaternions
+        quaternion_1 = Quaternion(0, 1, -1, 0.2)
 
-        # init test quaternions
-        quaternion_unit = Quaternion(**unit_quaternion())
-        quaternion_2 = Quaternion(2, 2, 2, 2)
-        quaternion_3 = Quaternion(0.2, 0.2, 0.2, 0.2)
-
-        # check correct multiplication
-        assert (2 * quaternion_unit) == quaternion_2
-        assert (0.2 * quaternion_unit) == quaternion_3
-
+        # assert addition is correct
+        assert (1 - quaternion_1) == Quaternion(1, -1, 1, -0.2)
         # test mult with wrong type
         with pytest.raises(NotImplementedError):
-            dict() * quaternion_unit
+            dict() - quaternion_1
 
     def test_mul(self):
         "Test that __mul__ works"
@@ -125,6 +132,22 @@ class TestQuaternion:
         # test mult with wrong type
         with pytest.raises(NotImplementedError):
             quaternion_1 * dict()
+
+    def test_rmul(self):
+        """Tests that the rmul works"""
+
+        # init test quaternions
+        quaternion_unit = Quaternion(**unit_quaternion())
+        quaternion_2 = Quaternion(2, 2, 2, 2)
+        quaternion_3 = Quaternion(0.2, 0.2, 0.2, 0.2)
+
+        # check correct multiplication
+        assert (2 * quaternion_unit) == quaternion_2
+        assert (0.2 * quaternion_unit) == quaternion_3
+
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            dict() * quaternion_unit
 
     def test_conjugate(self):
         """Test that conjugation works correctly"""

@@ -142,6 +142,32 @@ class Quaternion:
             self.x + other.x, self.i + other.i, self.j + other.j, self.k + other.k
         )
 
+    def __radd__(self, other: int | float) -> Quaternion:
+        """Add from the right, for scalars only
+
+        Parameters
+        ----------
+        other : int | float
+            The scalar this quaternion is being added to
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaternion
+
+        Raises
+        ------
+        NotImplementedError
+            Is raised if the other is not a scalar
+        """
+
+        # if other object is a scalar
+        if isinstance(other, int | float):
+            # invoke normal addition, as operation is commutative
+            return self.__add__(other=other)
+        else:
+            raise NotImplementedError
+
     def __sub__(self, other: Quaternion | int | float) -> Quaternion:
         """Subtract two quaternions or a quaternion and a scalar
 
@@ -165,6 +191,32 @@ class Quaternion:
         return type(self)(
             self.x - other.x, self.i - other.i, self.j - other.j, self.k - other.k
         )
+
+    def __rsub__(self, other: int | float) -> Quaternion:
+        """Sub from the right, for scalars only
+
+        Parameters
+        ----------
+        other : int | float
+            The scalar this quaternion is being subracted from
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaternion
+
+        Raises
+        ------
+        NotImplementedError
+            Is raised if the other is not a scalar
+        """
+
+        # if other object is a scalar
+        if isinstance(other, int | float):
+            # invoke subtraction, via negation and addition
+            return (-1 * self) + other
+        else:
+            raise NotImplementedError
 
     def __mul__(self, other: Quaternion | int | float) -> Quaternion:
         """Multiply either two quaternions or quaternions & a scalar
