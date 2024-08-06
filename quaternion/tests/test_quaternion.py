@@ -119,3 +119,10 @@ class TestQuaternion:
         """Test that conjugation works correctly"""
         # assert correct conjugation
         assert Quaternion(**unit_quaternion()).conjugate() == Quaternion(1, -1, -1, -1)
+
+    def test_inverse(self):
+        """Test that the inverse works correctly"""
+        # assert correct inverse
+        assert Quaternion(**unit_quaternion()).inverse() == Quaternion(
+            1 / 4, -1 / 4, -1 / 4, -1 / 4
+        )

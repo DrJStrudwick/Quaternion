@@ -255,3 +255,15 @@ class Quaternion:
 
         # conjugate is ever non real part negated
         return Quaternion(self.x, -self.i, -self.j, -self.k)
+
+    def inverse(self) -> Quaternion:
+        """Produce the inverse of this quaternion
+
+        Returns
+        -------
+        Quaternion
+            The inverse of this quaternion
+        """
+
+        # return the inverse of this Quaternion
+        return (1 / self.norm) * (self.conjugate())
