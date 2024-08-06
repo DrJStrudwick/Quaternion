@@ -75,6 +75,9 @@ class TestQuaternion:
         # assert addition is correct
         assert (quaternion_1 + quaternion_unit) == quaternion_2
         assert (quaternion_1 + 1) == Quaternion(1, 1, -1, 0.2)
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            quaternion_1 + dict()
 
     def test_sub(self):
         """Test that the sub method works"""
@@ -86,6 +89,9 @@ class TestQuaternion:
         # assert addition is correct
         assert (quaternion_2 - quaternion_unit) == quaternion_1
         assert (quaternion_1 - 1) == Quaternion(-1, 1, -1, 0.2)
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            quaternion_1 - dict()
 
     def test_rmul(self):
         """Tests that the rmul works"""
@@ -115,7 +121,10 @@ class TestQuaternion:
         # assert non commute
         assert (quaternion_1 * quaternion_2) != (quaternion_2 * quaternion_1)
         # assert correct scalar
-        assert (quaternion_1 * 2) == (2 * quaternion_1) == Quaternion(2, 4, 6, 8)
+        assert (quaternion_1 * 2) == Quaternion(2, 4, 6, 8)
+        # test mult with wrong type
+        with pytest.raises(NotImplementedError):
+            quaternion_1 * dict()
 
     def test_conjugate(self):
         """Test that conjugation works correctly"""
