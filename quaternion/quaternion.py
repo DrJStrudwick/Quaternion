@@ -8,6 +8,8 @@ import inspect
 
 
 class Quaternion:
+    ROUND_PREC = 16
+
     def __init__(
         self,
         x: int | float = 0,
@@ -39,10 +41,10 @@ class Quaternion:
             if not isinstance(locals()[key], eval(key_type)):
                 raise TypeError(f"{key} must be {key_type}")
 
-        self.x = round(x, 16)
-        self.i = round(i, 16)
-        self.j = round(j, 16)
-        self.k = round(k, 16)
+        self.x = round(x, self.ROUND_PREC)
+        self.i = round(i, self.ROUND_PREC)
+        self.j = round(j, self.ROUND_PREC)
+        self.k = round(k, self.ROUND_PREC)
         self.norm = self.x**2 + self.i**2 + self.j**2 + self.k**2
 
     def _typecheck(self, other: any):
@@ -266,4 +268,4 @@ class Quaternion:
         """
 
         # return the inverse of this Quaternion
-        return (1 / self.norm) * (self.conjugate())
+        return round(1 / self.norm, self.ROUND_PREC) * (self.conjugate())

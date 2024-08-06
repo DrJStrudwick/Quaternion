@@ -27,6 +27,8 @@ and this project adheres to [Semantic Versioning].
   - added `__mul__` and `__rmul__` method
   - added `conjugate` method
   - added `inverse` method
+  - added `inverse` method
+  - added `ROUND_PREC` attribute to class
 
 ## [0.0.1] - 2024-06-20
 
