@@ -19,7 +19,6 @@ def unit_quaternion() -> dict[str, int]:
 
 
 class TestQuaternion:
-
     @pytest.mark.parametrize("entry", ["x", "i", "j", "k"])
     def test_init_vartype(self, entry):
         with pytest.raises(TypeError, match="must be"):
@@ -62,8 +61,7 @@ class TestQuaternion:
     def test_repr(self):
         """Test that the repr method works"""
         # assert that the repr rep is as expected
-        assert repr(Quaternion(-12, 6, 24, 12)
-                    ) == "Quaternion(x=-12, i=6, j=24, k=12)"
+        assert repr(Quaternion(-12, 6, 24, 12)) == "Quaternion(x=-12, i=6, j=24, k=12)"
 
     def test_add(self):
         """Test that the add method works"""
@@ -153,8 +151,7 @@ class TestQuaternion:
     def test_conjugate(self):
         """Test that conjugation works correctly"""
         # assert correct conjugation
-        assert Quaternion(**unit_quaternion()
-                          ).conjugate() == Quaternion(1, -1, -1, -1)
+        assert Quaternion(**unit_quaternion()).conjugate() == Quaternion(1, -1, -1, -1)
 
     def test_inverse(self):
         """Test that the inverse works correctly"""

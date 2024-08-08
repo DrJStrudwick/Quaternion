@@ -1,10 +1,6 @@
 repos:
-  - repo: https://github.com/hhatto/autopep8
-    rev: v2.3.1
-    hooks:
-      - id: autopep8
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.5.0
+    rev: v4.6.0
     hooks:
       - id: check-ast
       - id: check-docstring-first
@@ -19,6 +15,17 @@ repos:
         args: [--pytest-test-first]
       - id: pretty-format-json
         args: [--autofix]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.5.7
+    hooks:
+      - id: ruff
+        args: [--fix]
+      - id: ruff-format
+  # TODO: determine if this is fully covered by Ruff
+  # - repo: https://github.com/hhatto/autopep8
+  #   rev: v2.3.1
+  #   hooks:
+  #     - id: autopep8
   # TODO: Include when/if hook is extended to check .toml files
   # - repo: https://github.com/pivotal/LicenseFinder
   #   rev: v7.1.0 # You probably want the latest tag.
