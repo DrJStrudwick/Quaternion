@@ -1,0 +1,26 @@
+repos:
+  - repo: https://github.com/hhatto/autopep8
+    rev: v2.3.1
+    hooks:
+      - id: autopep8
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.5.0
+    hooks:
+      - id: check-ast
+      - id: check-docstring-first
+      - id: check-executables-have-shebangs
+      - id: check-json
+      - id: check-yaml
+      - id: check-toml
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: mixed-line-ending
+      - id: name-tests-test
+        args: [--pytest-test-first]
+      - id: pretty-format-json
+        args: [--autofix]
+  # TODO: Include when/if hook is extended to check .toml files
+  # - repo: https://github.com/pivotal/LicenseFinder
+  #   rev: v7.1.0 # You probably want the latest tag.
+  #   hooks:
+  #     - id: license-finder

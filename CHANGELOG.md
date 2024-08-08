@@ -13,6 +13,7 @@ and this project adheres to [Semantic Versioning].
 - added code of conduct
 - added initial folder structure
 - added initial vscode settings
+- added initial pre-commit hooks config and run
 - added poetry init
 - added configured testing suite
 - added juypter for development

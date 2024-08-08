@@ -102,9 +102,9 @@ class Quaternion:
         # return the string representing this quaternion
         return (
             f"{self.x}"
-            f"{'+' if self.i>=0 else ''}{self.i}i"
-            f"{'+' if self.j>=0 else ''}{self.j}j"
-            f"{'+' if self.k>=0 else ''}{self.k}k"
+            f"{'+' if self.i >= 0 else ''}{self.i}i"
+            f"{'+' if self.j >= 0 else ''}{self.j}j"
+            f"{'+' if self.k >= 0 else ''}{self.k}k"
         )
 
     def __repr__(self) -> str:

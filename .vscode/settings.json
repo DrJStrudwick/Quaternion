@@ -1,20 +1,21 @@
 {
-    "python.testing.pytestArgs": [
-        "quaternion",
-        "--cov=quaternion/",
-        "--cov-config=.coveragerc",
-        "--cov-report=xml"
-    ],
-    "python.testing.unittestEnabled": false,
-    "python.testing.pytestEnabled": true,
-    "licenser.excludeFileExtensions": [
-        "ipynb",
-        "json",
-        "csv"
-    ],
-    "markdownlint.config": {
-        "MD024": {
-            "siblings_only": true
-        }
+  "licenser.excludeFileExtensions": [
+    "ipynb",
+    "json",
+    "csv",
+    "yaml"
+  ],
+  "markdownlint.config": {
+    "MD024": {
+      "siblings_only": true
     }
+  },
+  "python.testing.pytestArgs": [
+    "quaternion",
+    "--cov=quaternion/",
+    "--cov-config=.coveragerc",
+    "--cov-report=xml"
+  ],
+  "python.testing.pytestEnabled": true,
+  "python.testing.unittestEnabled": false
 }
