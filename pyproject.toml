@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quaternion"
-version = "0.1.0"
+version = "0.0.1"
 description = "A package for using quaternions"
 authors = ["James Strudwick <James.Strudwick@ibm.com>"]
 license = "MIT"
@@ -9,13 +9,17 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = "^3.11"
 
+
 [tool.poetry.group.test.dependencies]
-pytest-cov = "^5.0.0"
 pytest = "^8.3.2"
+pytest-cov = "^5.0.0"
 
 
 [tool.poetry.group.dev.dependencies]
 jupyter = "^1.0.0"
+pre-commit = "^3.8.0"
+pip-licenses = "^5.0.0"
+pipdeptree = "^2.23.1"
 
 [build-system]
 requires = ["poetry-core"]
