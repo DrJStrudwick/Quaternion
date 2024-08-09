@@ -8,7 +8,7 @@ import inspect
 
 
 class Quaternion:
-    ROUND_PREC = 16
+    ROUND_PRECISION = 16
 
     def __init__(
         self,
@@ -41,13 +41,13 @@ class Quaternion:
             if not isinstance(locals()[key], eval(key_type)):
                 raise TypeError(f"{key} must be {key_type}")
 
-        self.x = round(x, self.ROUND_PREC)
-        self.i = round(i, self.ROUND_PREC)
-        self.j = round(j, self.ROUND_PREC)
-        self.k = round(k, self.ROUND_PREC)
+        self.x = round(x, self.ROUND_PRECISION)
+        self.i = round(i, self.ROUND_PRECISION)
+        self.j = round(j, self.ROUND_PRECISION)
+        self.k = round(k, self.ROUND_PRECISION)
         self.norm = self.x**2 + self.i**2 + self.j**2 + self.k**2
 
-    def _typecheck(self, other: any):
+    def _type_check(self, other: any):
         """Checks if another provided object is an instance of this class
 
         Parameters
@@ -80,7 +80,7 @@ class Quaternion:
             Return True if the two quaternions are equal and False if not
         """
         # check that the other value is an appropriate type
-        self._typecheck(value)
+        self._type_check(value)
 
         # perform equality check
         is_equal = (
@@ -136,7 +136,7 @@ class Quaternion:
         if isinstance(other, int | float):
             return type(self)(self.x + other, self.i, self.j, self.k)
         # check other is a Quaternion
-        self._typecheck(other)
+        self._type_check(other)
         # Perform addition
         return type(self)(
             self.x + other.x, self.i + other.i, self.j + other.j, self.k + other.k
@@ -174,7 +174,7 @@ class Quaternion:
         Parameters
         ----------
         other : Quaternion | int | float
-            The other quaternion/scalar to be subracted from this quaternion
+            The other quaternion/scalar to be subtracted from this quaternion
 
         Returns
         -------
@@ -186,8 +186,8 @@ class Quaternion:
             return type(self)(self.x - other, self.i, self.j, self.k)
 
         # check other is a Quaternion
-        self._typecheck(other)
-        # perform subtration and return
+        self._type_check(other)
+        # perform subtraction and return
         return type(self)(
             self.x - other.x, self.i - other.i, self.j - other.j, self.k - other.k
         )
@@ -198,7 +198,7 @@ class Quaternion:
         Parameters
         ----------
         other : int | float
-            The scalar this quaternion is being subracted from
+            The scalar this quaternion is being subtracted from
 
         Returns
         -------
@@ -229,16 +229,16 @@ class Quaternion:
         Returns
         -------
         Quaternion
-            The resulting quaterion
+            The resulting quaternion
         """
 
-        # check if being multiplied by a scalar, if so quick mult
+        # check if being multiplied by a scalar, if so quick multiply
         if isinstance(other, int | float):
             return Quaternion(
                 other * self.x, other * self.i, other * self.j, other * self.k
             )
         # otherwise check other is a quaternion
-        self._typecheck(other)
+        self._type_check(other)
 
         # perform x component calculation
         quaternion_x_component = Quaternion(
@@ -326,4 +326,4 @@ class Quaternion:
         """
 
         # return the inverse of this Quaternion
-        return round(1 / self.norm, self.ROUND_PREC) * (self.conjugate())
+        return round(1 / self.norm, self.ROUND_PRECISION) * (self.conjugate())
