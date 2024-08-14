@@ -33,6 +33,7 @@ and this project adheres to [Semantic Versioning].
   - added `trace` attribute
   - added `pure` attribute
   - added `unit` attribute
+- steamlined import
 
 ## [0.0.1] - 2024-06-20
 
