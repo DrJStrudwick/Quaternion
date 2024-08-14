@@ -29,6 +29,7 @@ and this project adheres to [Semantic Versioning].
   - added `conjugate` method
   - added `inverse` method
   - added `norm` method
+  - added `__truediv__` and `__rtruediv__` method
 
 ## [0.0.1] - 2024-06-20
 

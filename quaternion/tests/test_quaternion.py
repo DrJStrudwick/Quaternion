@@ -159,3 +159,27 @@ class TestQuaternion:
         assert Quaternion(**unit_quaternion()).inverse() == Quaternion(
             1 / 4, -1 / 4, -1 / 4, -1 / 4
         )
+
+    def test_truediv(self):
+        """Test that the __truediv__ works"""
+        # check when being divided by an int or float
+        assert Quaternion(**unit_quaternion()) / 2 == Quaternion(
+            1 / 2,
+            1 / 2,
+            1 / 2,
+            1 / 2,
+        )
+        # check when being divided by a quaternion
+        assert (
+            Quaternion(**unit_quaternion()) / Quaternion(**unit_quaternion())
+        ) == Quaternion(1)
+
+    def test_rtruediv(self):
+        """Test that __rtruediv__ works"""
+        # check div works out to the same
+        assert (1 / Quaternion(**unit_quaternion())) == Quaternion(
+            **unit_quaternion()
+        ).inverse()
+        # test div with wrong type
+        with pytest.raises(NotImplementedError):
+            dict() / Quaternion(**unit_quaternion())

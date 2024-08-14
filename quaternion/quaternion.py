@@ -328,3 +328,56 @@ class Quaternion:
 
         # return the inverse of this Quaternion
         return (1 / self.norm) * (self.conjugate())
+
+    def __truediv__(self, other: Quaternion | int | float) -> Quaternion:
+        """Return the results of dividing this Quaternion by another object
+
+        Parameters
+        ----------
+        other : Quaternion | int | float
+            The object that is dividing this quaternion
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaternion.
+        """
+        # TODO: write test
+
+        # check if being divide by a scalar, if so quick div
+        if isinstance(other, int | float):
+            return Quaternion(
+                self.x / other, self.i / other, self.j / other, self.k / other
+            )
+        # otherwise check other is a quaternion
+        self._type_check(other)
+
+        # multiply this quaternion with the inverse of the other
+        return self * other.inverse()
+
+    def __rtruediv__(self, other: int | float) -> Quaternion:
+        """Return the results of dividing another object by this quaternion.
+
+        Parameters
+        ----------
+        other : int | float
+            The other object that is being divided by this quaternion
+
+        Returns
+        -------
+        Quaternion
+            The resulting quaternion
+
+        Raises
+        ------
+        NotImplementedError
+            Is raised if the object being divided is not an int or a float
+        """
+        # TODO: write test
+
+        # check if the other thing being divided is a scalar, if so do div
+        if isinstance(other, int | float):
+            return other * self.inverse()
+        else:
+            # otherwise raise error
+            raise NotImplementedError
