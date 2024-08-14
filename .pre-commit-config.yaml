@@ -21,13 +21,12 @@ repos:
       - id: ruff
         args: [--fix]
       - id: ruff-format
-  # TODO: determine if this is fully covered by Ruff
-  # - repo: https://github.com/hhatto/autopep8
-  #   rev: v2.3.1
-  #   hooks:
-  #     - id: autopep8
-  # TODO: Include when/if hook is extended to check .toml files
-  # - repo: https://github.com/pivotal/LicenseFinder
-  #   rev: v7.1.0 # You probably want the latest tag.
-  #   hooks:
-  #     - id: license-finder
+  - repo: https://github.com/shellcheck-py/shellcheck-py
+    rev: v0.10.0.1
+    hooks:
+      - id: shellcheck
+# TODO: Include when/if hook is extended to check .toml files
+# - repo: https://github.com/pivotal/LicenseFinder
+#   rev: v7.1.0
+#   hooks:
+#     - id: license-finder
