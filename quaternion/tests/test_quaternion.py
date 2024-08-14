@@ -183,3 +183,8 @@ class TestQuaternion:
         # test div with wrong type
         with pytest.raises(NotImplementedError):
             dict() / Quaternion(**unit_quaternion())
+
+    def test_trace(self):
+        """Check that the trace works correctly"""
+        # Check trace is correctly calculated
+        assert Quaternion(**unit_quaternion()).trace == 2
