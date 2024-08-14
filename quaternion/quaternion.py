@@ -48,6 +48,7 @@ class Quaternion:
         self.k = k
         self.norm = x**2 + i**2 + j**2 + k**2
         self.trace = 2 * self.x
+        self.pure = abs(self.x) <= eps
 
     def _type_check(self, other: any):
         """Checks if another provided object is an instance of this class

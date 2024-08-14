@@ -31,6 +31,7 @@ and this project adheres to [Semantic Versioning].
   - added `norm` attribute
   - added `__truediv__` and `__rtruediv__` method
   - added `trace` attribute
+  - added `pure` attribute
 
 ## [0.0.1] - 2024-06-20
 

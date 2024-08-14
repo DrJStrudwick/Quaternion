@@ -188,3 +188,10 @@ class TestQuaternion:
         """Check that the trace works correctly"""
         # Check trace is correctly calculated
         assert Quaternion(**unit_quaternion()).trace == 2
+
+    def test_pure(self):
+        """Check that the pure attribute works correctly"""
+        # check non pure
+        assert not Quaternion(**unit_quaternion()).pure
+        # check pure
+        assert Quaternion(i=1, j=1, k=1).pure
