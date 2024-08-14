@@ -2,14 +2,15 @@
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
-# from typing import Self
+
 from __future__ import annotations
 import inspect
+import sys
+
+eps = sys.float_info.epsilon
 
 
 class Quaternion:
-    ROUND_PRECISION = 16
-
     def __init__(
         self,
         x: int | float = 0,
@@ -41,11 +42,11 @@ class Quaternion:
             if not isinstance(locals()[key], eval(key_type)):
                 raise TypeError(f"{key} must be {key_type}")
 
-        self.x = round(x, self.ROUND_PRECISION)
-        self.i = round(i, self.ROUND_PRECISION)
-        self.j = round(j, self.ROUND_PRECISION)
-        self.k = round(k, self.ROUND_PRECISION)
-        self.norm = self.x**2 + self.i**2 + self.j**2 + self.k**2
+        self.x = x
+        self.i = i
+        self.j = j
+        self.k = k
+        self.norm = x**2 + i**2 + j**2 + k**2
 
     def _type_check(self, other: any):
         """Checks if another provided object is an instance of this class
@@ -84,10 +85,10 @@ class Quaternion:
 
         # perform equality check
         is_equal = (
-            self.x == value.x
-            and self.i == value.i
-            and self.j == value.j
-            and self.k == value.k
+            (abs(value.x - self.x) <= eps)
+            and (abs(value.i - self.i) <= eps)
+            and (abs(value.j - self.j) <= eps)
+            and (abs(value.k - self.k) <= eps)
         )
         return is_equal
 
@@ -326,4 +327,4 @@ class Quaternion:
         """
 
         # return the inverse of this Quaternion
-        return round(1 / self.norm, self.ROUND_PRECISION) * (self.conjugate())
+        return (1 / self.norm) * (self.conjugate())
