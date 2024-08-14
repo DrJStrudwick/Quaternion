@@ -195,3 +195,10 @@ class TestQuaternion:
         assert not Quaternion(**unit_quaternion()).pure
         # check pure
         assert Quaternion(i=1, j=1, k=1).pure
+
+    def test_unit(self):
+        """test that the unit attribute works correctly"""
+        # check unit
+        assert Quaternion(0, 1).unit
+        # check not unit
+        assert not Quaternion(1, 1).unit
