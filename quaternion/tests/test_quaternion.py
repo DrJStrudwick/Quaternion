@@ -78,7 +78,6 @@ class TestQuaternion:
 
     def test_add(self):
         """Test that the add method works."""
-
         # init quaternions
         quaternion_1 = Quaternion(0, 1, -1, 0.2)
         quaternion_unit = Quaternion(**unit_quaternion())
@@ -93,7 +92,6 @@ class TestQuaternion:
 
     def test_right_add(self):
         """Test that the __radd__ method works."""
-
         # init quaternions
         quaternion_1 = Quaternion(0, 1, -1, 0.2)
 
@@ -130,7 +128,6 @@ class TestQuaternion:
 
     def test_mul(self):
         """Test that __mul__ works."""
-
         # init quaternions
         quaternion_1 = Quaternion(1, 2, 3, 4)
         quaternion_2 = Quaternion(4, 3, 2, 1)
@@ -147,7 +144,6 @@ class TestQuaternion:
 
     def test_r_mul(self):
         """Test that the __rmul__ works."""
-
         # init test quaternions
         quaternion_unit = Quaternion(**unit_quaternion())
         quaternion_2 = Quaternion(2, 2, 2, 2)

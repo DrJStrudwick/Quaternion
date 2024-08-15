@@ -22,6 +22,10 @@ pip-licenses = "^5.0.0"
 pipdeptree = "^2.23.1"
 tox = "^4.18.0"
 
+
+[tool.poetry.group.docs.dependencies]
+pdoc3 = "^0.11.1"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"

@@ -34,7 +34,8 @@ and this project adheres to [Semantic Versioning].
   - added `pure` attribute
   - added `unit` attribute
 - streamlined import
-- Added tox for multiple python version testing
+- Added `tox` for multiple python version testing
+- Added `pdoc3` to generate documentation
 
 ## [0.0.1] - 2024-06-20
 

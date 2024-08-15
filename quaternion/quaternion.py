@@ -12,6 +12,8 @@ eps = sys.float_info.epsilon
 
 
 class Quaternion:
+    """A class to represent a Quaternion."""
+
     # TODO: Make full docstring, possibly wait until AutoDocstring gets updated?
     def __init__(
         self,
@@ -136,7 +138,6 @@ class Quaternion:
         str
             The repr for this quaternion.
         """
-
         # Produce the repr
         return f"{type(self).__name__}(x={self.x}, i={self.i}, j={self.j}, k={self.k})"
 
@@ -183,7 +184,6 @@ class Quaternion:
         NotImplementedError
             Is raised if the other is not a scalar.
         """
-
         # if other object is a scalar
         if isinstance(other, int | float):
             # invoke normal addition, as operation is commutative
@@ -235,7 +235,6 @@ class Quaternion:
         NotImplementedError
             Is raised if the other is not a scalar.
         """
-
         # if other object is a scalar
         if isinstance(other, int | float):
             # invoke subtraction, via negation and addition
@@ -257,7 +256,6 @@ class Quaternion:
         Quaternion
             The resulting quaternion.
         """
-
         # check if being multiplied by a scalar, if so quick multiply
         if isinstance(other, int | float):
             return Quaternion(
@@ -321,7 +319,6 @@ class Quaternion:
         NotImplementedError
             Is raised if the other object is not a int or a float.
         """
-
         # check if scalar, if so do calculation
         if isinstance(other, int | float):
             return Quaternion(
@@ -340,7 +337,6 @@ class Quaternion:
         Quaternion
             The corresponding conjugate quaternion.
         """
-
         # conjugate is ever non real part negated
         return Quaternion(self.x, -self.i, -self.j, -self.k)
 
@@ -353,7 +349,6 @@ class Quaternion:
         Quaternion
             The inverse of this quaternion.
         """
-
         # return the inverse of this Quaternion
         return (1 / self.norm) * (self.conjugate())
 
