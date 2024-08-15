@@ -36,6 +36,7 @@ and this project adheres to [Semantic Versioning].
 - streamlined import
 - Added `tox` for multiple python version testing
 - Added `pdoc3` to generate documentation
+- Added config yaml for Read the Docs
 
 ## [0.0.1] - 2024-06-20
 
