@@ -2,6 +2,7 @@
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
+"""The source code for the Quaternion class."""
 
 from __future__ import annotations
 import inspect
@@ -11,6 +12,7 @@ eps = sys.float_info.epsilon
 
 
 class Quaternion:
+    # TODO: Make full docstring, possibly wait until AutoDocstring gets updated?
     def __init__(
         self,
         x: int | float = 0,
@@ -19,23 +21,34 @@ class Quaternion:
         k: int | float = 0,
     ):
         """
-        Constructs the attributes for the Quaternion object
+        Create the Quaternion object.
 
         Parameters
         ----------
         x : int | float, optional
-            The value for the x component, by default 0
+            The value for the x component, by default 0.
         i : int | float, optional
-            The value for the i component, by default 0
+            The value for the i component, by default 0.
         j : int | float, optional
-            The value for the j component, by default 0
+            The value for the j component, by default 0.
         k : int | float, optional
-            The value for the k component, by default 0
+            The value for the k component, by default 0.
+
+        Attributes
+        ----------
+        norm : float
+            The norm of the constructed quaternion
+        trace : float
+                The trace of the constructed quaternion
+        pure : bool
+            A boolean to indicate if the constructed Quaternion is pure or not
+        unit : bool
+            A boolean to indicate if the constructed Quaternion is a unit or not
 
         Raises
         ------
         TypeError
-            Is raised if any of the arguments are not an int or float
+            Is raised if any of the arguments are not an int or float.
         """
         # check input types
         for key, key_type in inspect.get_annotations(self.__init__).items():
@@ -52,17 +65,18 @@ class Quaternion:
         self.unit = abs(self.norm - 1) <= eps
 
     def _type_check(self, other: any):
-        """Checks if another provided object is an instance of this class
+        """
+        Check if another provided object is an instance of this class.
 
         Parameters
         ----------
         other : any
-            The other object to be checked
+            The other object to be checked.
 
         Raises
         ------
         NotImplementedError
-            Is raised if the other object is not an instance of this class
+            Is raised if the other object is not an instance of this class.
         """
         if not isinstance(other, type(self)):
             raise NotImplementedError(
@@ -71,17 +85,18 @@ class Quaternion:
             )
 
     def __eq__(self, value: Quaternion) -> bool:
-        """checks if this quaternion is equal to another
+        """
+        Check if this quaternion is equal to another.
 
         Parameters
         ----------
         value : Quaternion
-            the other quaternion that this is compared against
+            The other quaternion that this is compared against.
 
         Returns
         -------
         bool
-            Return True if the two quaternions are equal and False if not
+            Return True if the two quaternions are equal and False if not.
         """
         # check that the other value is an appropriate type
         self._type_check(value)
@@ -96,12 +111,13 @@ class Quaternion:
         return is_equal
 
     def __str__(self) -> str:
-        """Create the string representation of this quaternion
+        """
+        Create the string representation of this quaternion.
 
         Returns
         -------
         str
-            The string representation of the quaternion
+            The string representation of the quaternion.
         """
         # return the string representing this quaternion
         return (
@@ -112,29 +128,31 @@ class Quaternion:
         )
 
     def __repr__(self) -> str:
-        """Create the repr for this quaternion
+        """
+        Create the repr for this quaternion.
 
         Returns
         -------
         str
-            The repr for this quaternion
+            The repr for this quaternion.
         """
 
         # Produce the repr
         return f"{type(self).__name__}(x={self.x}, i={self.i}, j={self.j}, k={self.k})"
 
     def __add__(self, other: Quaternion | int | float) -> Quaternion:
-        """Add two quaternions together or a quaternion and a scalar
+        """
+        Add two quaternions together or a quaternion and a scalar.
 
         Parameters
         ----------
         other : Quaternion | int | float
-            The other quaternion/scalar to be added
+            The other quaternion/scalar to be added.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion from the addition
+            The resulting quaternion from the addition.
         """
         # if the other object is a scalar
         if isinstance(other, int | float):
@@ -147,22 +165,23 @@ class Quaternion:
         )
 
     def __radd__(self, other: int | float) -> Quaternion:
-        """Add from the right, for scalars only
+        """
+        Add from the right, for scalars only.
 
         Parameters
         ----------
         other : int | float
-            The scalar this quaternion is being added to
+            The scalar this quaternion is being added to.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion
+            The resulting quaternion.
 
         Raises
         ------
         NotImplementedError
-            Is raised if the other is not a scalar
+            Is raised if the other is not a scalar.
         """
 
         # if other object is a scalar
@@ -173,17 +192,18 @@ class Quaternion:
             raise NotImplementedError
 
     def __sub__(self, other: Quaternion | int | float) -> Quaternion:
-        """Subtract two quaternions or a quaternion and a scalar
+        """
+        Subtract two quaternions or a quaternion and a scalar.
 
         Parameters
         ----------
         other : Quaternion | int | float
-            The other quaternion/scalar to be subtracted from this quaternion
+            The other quaternion/scalar to be subtracted from this quaternion.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion
+            The resulting quaternion.
         """
         # if the other object is a scalar
         if isinstance(other, int | float):
@@ -197,22 +217,23 @@ class Quaternion:
         )
 
     def __rsub__(self, other: int | float) -> Quaternion:
-        """Sub from the right, for scalars only
+        """
+        Sub from the right, for scalars only.
 
         Parameters
         ----------
         other : int | float
-            The scalar this quaternion is being subtracted from
+            The scalar this quaternion is being subtracted from.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion
+            The resulting quaternion.
 
         Raises
         ------
         NotImplementedError
-            Is raised if the other is not a scalar
+            Is raised if the other is not a scalar.
         """
 
         # if other object is a scalar
@@ -223,17 +244,18 @@ class Quaternion:
             raise NotImplementedError
 
     def __mul__(self, other: Quaternion | int | float) -> Quaternion:
-        """Multiply either two quaternions or quaternions & a scalar
+        """
+        Multiply either two quaternions or quaternions & a scalar.
 
         Parameters
         ----------
         other : Quaternion | int | float
-            the other quaternion to be multiplied with
+            The other quaternion to be multiplied with.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion
+            The resulting quaternion.
         """
 
         # check if being multiplied by a scalar, if so quick multiply
@@ -281,22 +303,23 @@ class Quaternion:
         )
 
     def __rmul__(self, other: int | float) -> Quaternion:
-        """multiply from the right, only for scalars
+        """
+        Multiply from the right, only for scalars.
 
         Parameters
         ----------
         other : int | float
-            The scalar to be multiplied with this quaternion
+            The scalar to be multiplied with this quaternion.
 
         Returns
         -------
         Quaternion
-            The resulting multiplication
+            The resulting multiplication.
 
         Raises
         ------
         NotImplementedError
-            Is raised if the other object is not a int or a float
+            Is raised if the other object is not a int or a float.
         """
 
         # check if scalar, if so do calculation
@@ -309,36 +332,39 @@ class Quaternion:
             raise NotImplementedError
 
     def conjugate(self) -> Quaternion:
-        """Produce the conjugate of the this quaternion
+        """
+        Produce the conjugate of the this quaternion.
 
         Returns
         -------
         Quaternion
-            the corresponding conjugate quaternion
+            The corresponding conjugate quaternion.
         """
 
         # conjugate is ever non real part negated
         return Quaternion(self.x, -self.i, -self.j, -self.k)
 
     def inverse(self) -> Quaternion:
-        """Produce the inverse of this quaternion
+        """
+        Produce the inverse of this quaternion.
 
         Returns
         -------
         Quaternion
-            The inverse of this quaternion
+            The inverse of this quaternion.
         """
 
         # return the inverse of this Quaternion
         return (1 / self.norm) * (self.conjugate())
 
     def __truediv__(self, other: Quaternion | int | float) -> Quaternion:
-        """Return the results of dividing this Quaternion by another object
+        """
+        Return the results of dividing this Quaternion by another object.
 
         Parameters
         ----------
         other : Quaternion | int | float
-            The object that is dividing this quaternion
+            The object that is dividing this quaternion.
 
         Returns
         -------
@@ -359,17 +385,18 @@ class Quaternion:
         return self * other.inverse()
 
     def __rtruediv__(self, other: int | float) -> Quaternion:
-        """Return the results of dividing another object by this quaternion.
+        """
+        Return the results of dividing another object by this quaternion.
 
         Parameters
         ----------
         other : int | float
-            The other object that is being divided by this quaternion
+            The other object that is being divided by this quaternion.
 
         Returns
         -------
         Quaternion
-            The resulting quaternion
+            The resulting quaternion.
 
         Raises
         ------

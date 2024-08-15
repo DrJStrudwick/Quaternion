@@ -25,6 +25,11 @@ repos:
     rev: v0.10.0.1
     hooks:
       - id: shellcheck
+# TODO: decide if this hook is worth having in, note section configured in pytoml.
+# - repo: https://github.com/numpy/numpydoc
+#   rev: v1.8.0
+#   hooks:
+#     - id: numpydoc-validation
 # TODO: Include when/if hook is extended to check .toml files
 # - repo: https://github.com/pivotal/LicenseFinder
 #   rev: v7.1.0
