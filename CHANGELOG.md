@@ -37,6 +37,7 @@ and this project adheres to [Semantic Versioning].
 - Added `tox` for multiple python version testing, including back to `3.10`
 - Added `pdoc3` to generate documentation
 - Added config yaml for Read the Docs
+- Added `CONTRIBUTING.md`
 
 ## [0.0.1] - 2024-06-20
 
