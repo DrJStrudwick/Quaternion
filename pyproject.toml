@@ -7,7 +7,7 @@ license = "MIT"
 readme = "README.md"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 
 
 [tool.poetry.group.test.dependencies]
@@ -40,7 +40,7 @@ testpaths = [
 legacy_tox_ini = """
     [tox]
     isolated_build = True
-    envlist = py312,py311
+    envlist = py312,py311,py310
 
     [testenv]
     allowlist_externals = poetry
