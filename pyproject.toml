@@ -13,6 +13,7 @@ python = "^3.11"
 [tool.poetry.group.test.dependencies]
 pytest = "^8.3.2"
 pytest-cov = "^5.0.0"
+tox = "^4.18.0"
 
 
 [tool.poetry.group.dev.dependencies]
@@ -20,7 +21,6 @@ jupyter = "^1.0.0"
 pre-commit = "^3.8.0"
 pip-licenses = "^5.0.0"
 pipdeptree = "^2.23.1"
-tox = "^4.18.0"
 
 
 [tool.poetry.group.docs.dependencies]
@@ -30,10 +30,21 @@ pdoc3 = "^0.11.1"
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
-[tool.numpydoc_validation]
-checks = [
-    "all",   # report on all checks, except the below
-    "EX01",
-    "SA01",
-    "ES01",
+[tool.pytest.ini_options]
+addopts = "--cov=quaternion/ --cov-config=.coveragerc --cov-report=xml"
+testpaths = [
+    "quaternion",
 ]
+
+[tool.tox]
+legacy_tox_ini = """
+    [tox]
+    isolated_build = True
+    envlist = py312,py311
+
+    [testenv]
+    allowlist_externals = poetry
+    commands =
+        poetry install
+        poetry run pytest
+"""

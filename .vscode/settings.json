@@ -10,12 +10,6 @@
       "siblings_only": true
     }
   },
-  "python.testing.pytestArgs": [
-    "quaternion",
-    "--cov=quaternion/",
-    "--cov-config=.coveragerc",
-    "--cov-report=xml"
-  ],
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false
 }
