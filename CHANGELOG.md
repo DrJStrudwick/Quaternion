@@ -39,6 +39,10 @@ and this project adheres to [Semantic Versioning].
 - Added config yaml for Read the Docs
 - Added `CONTRIBUTING.md`
 
+### Changed
+
+- Updated `README.md`
+
 ## [0.0.1] - 2024-06-20
 
 - initial release
