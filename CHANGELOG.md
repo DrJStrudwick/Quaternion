@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [1.0.0] - 2024-08-20
+
+- Full release
+
 ## [0.2.0] - 2024-08-20
 
 ### Changed
@@ -82,3 +86,4 @@ and this project adheres to [Semantic Versioning].
 [0.1.0]: https://github.com/Author/Repository/releases/tag/v0.1.0
 [0.1.1]: https://github.com/Author/Repository/releases/tag/v0.1.1
 [0.2.0]: https://github.com/Author/Repository/releases/tag/v0.2.0
+[1.0.0]: https://github.com/Author/Repository/releases/tag/v1.0.0

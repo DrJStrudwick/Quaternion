@@ -17,7 +17,7 @@ This once was an area of study for myself during my undergraduate and I thought 
 There are two sources for installation:
 
 - GitHub, <https://github.com/DrJStrudwick/Quaternion>
-- PyPI, ```TO BE CONFIGURED```
+- PyPi, ```pip install quaternion-djs```
 
 As the package develops the changelog can be found [here](CHANGELOG.md)
 
