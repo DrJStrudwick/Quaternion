@@ -4,8 +4,10 @@
 name: Test python package
 
 on:
+  push:
+    branches: ["dev"]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "main", "dev" ]
 
 jobs:
   build:

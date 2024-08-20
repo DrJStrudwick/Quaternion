@@ -34,10 +34,11 @@ Contributions may take the form of any of the following, all of which are welcom
 We look to operate with a standard development workflow, that is for any new development we would like to go through the following steps:
 
  1. Please create a corresponding issue related to the Bug report/Feature request.
- 2. Create a branch off main, related to your issues & do your work within that branch, including tests & documentation.
+ 2. Create a branch off dev, related to your issues & do your work within that branch, including tests & documentation.
  3. Run tests and ensure everything passes with test coverage achieving over 80%.
- 4. Submit a pull request.
- 5. Upon review, if successful the pull request will be approved and the deployment pipeline triggered.
+ 4. Submit a pull request to merge back into dev.
+ 5. Upon review, if successful the pull request will be approved
+ 6. When ready the owners will create a pull request to merge dev into main for the next release and the deployment pipeline triggered.
 
 ## Developer environment
 
