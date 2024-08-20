@@ -5,7 +5,11 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [version] - 2024-08-20
+## [0.1.2] - 2024-08-20
+
+### Changed
+
+- Updated project metadata
 
 ### Fixed
 

@@ -1,11 +1,18 @@
 [tool.poetry]
 
 name = "quaternion_djs"
-version = "0.1.1"
+version = "0.1.2"
 description = "A package for using quaternions"
 authors = ["James Strudwick <James.Strudwick@ibm.com>"]
 license = "MIT"
 readme = "README.md"
+documentation = "https://quaternion-djs.readthedocs.io/en/latest/"
+repository = "https://github.com/DrJStrudwick/Quaternion"
+
+[tool.poetry.urls]
+"Issues" = "https://github.com/DrJStrudwick/Quaternion/issues"
+"Changelog" = "https://github.com/DrJStrudwick/Quaternion/blob/main/CHANGELOG.md"
+
 
 [tool.poetry.dependencies]
 python = "^3.10"
