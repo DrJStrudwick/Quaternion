@@ -38,7 +38,9 @@ and this project adheres to [Semantic Versioning].
 - Added `pdoc3` to generate documentation
 - Added config yaml for Read the Docs
 - Added `CONTRIBUTING.md`
-- Added gh action: `test-python-package-wf.yml`
+- Added gh action:
+  - Test python package (`test-python-package-wf.yml`)
+  - Tag & Release (`tag_release_wf.yml`)
 
 ### Changed
 
