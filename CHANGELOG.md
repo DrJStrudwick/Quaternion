@@ -41,6 +41,7 @@ and this project adheres to [Semantic Versioning].
 - Added gh action:
   - Test python package (`test-python-package-wf.yml`)
   - Tag & Release (`tag_release_wf.yml`)
+  - Upload Python Package (`publish-python-package-wf.yml`)
 
 ### Changed
 
