@@ -1,6 +1,6 @@
 [tool.poetry]
-name = "quaternion"
-version = "0.1.0"
+name = "quaternion_djs"
+version = "0.1.1"
 description = "A package for using quaternions"
 authors = ["James Strudwick <James.Strudwick@ibm.com>"]
 license = "MIT"
@@ -31,9 +31,9 @@ requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
 
 [tool.pytest.ini_options]
-addopts = "--cov=quaternion/ --cov-config=.coveragerc --cov-report=xml"
+addopts = "--cov=quaternion_djs/ --cov-config=.coveragerc --cov-report=xml"
 testpaths = [
-    "quaternion",
+    "quaternion_djs",
 ]
 
 [tool.tox]
