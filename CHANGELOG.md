@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
-## [Unreleased]
+## [0.1.0] - 2024-08-20
 
 ### Added
 
@@ -56,5 +56,5 @@ and this project adheres to [Semantic Versioning].
 [semantic versioning]: https://semver.org/spec/v2.0.0.html
 
 <!-- Versions -->
-[unreleased]: https://github.com/Author/Repository/compare/v0.0.2...HEAD
 [0.0.1]: https://github.com/Author/Repository/releases/tag/v0.0.1
+[0.1.0]: https://github.com/Author/Repository/releases/tag/v0.1.0
