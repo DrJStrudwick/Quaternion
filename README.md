@@ -30,7 +30,7 @@ Our documentation is hosted on ReadTheDocs and can be found here: <https://quate
 The Quaternion class can be initialized easily by just supplying the corresponding values for the x, i, j, k components and then use in calculations as required. For the full list of methods and attributes available see the documentation.
 
 ```python
->>>from quaternion import Quaternion
+>>>from quaternion_djs import Quaternion
 >>>quaternion_1 = Quaternion(1, 2, 0, 1.2)
 ```
 

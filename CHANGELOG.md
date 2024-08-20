@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [0.1.2] - 2024-08-20
+
+### Changed
+
+- Updated project metadata
+
+### Fixed
+
+- Fixed example import in readme
+
 ## [0.1.1] - 2024-08-20
 
 ### Changed
@@ -64,3 +74,4 @@ and this project adheres to [Semantic Versioning].
 <!-- Versions -->
 [0.0.1]: https://github.com/Author/Repository/releases/tag/v0.0.1
 [0.1.0]: https://github.com/Author/Repository/releases/tag/v0.1.0
+[0.1.1]: https://github.com/Author/Repository/releases/tag/v0.1.1
