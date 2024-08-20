@@ -6,4 +6,4 @@ build:
     python: "3.12"
   commands:
     - mkdir --parents ${READTHEDOCS_OUTPUT}/html/
-    - cp --recursive docs/quaternion/* ${READTHEDOCS_OUTPUT}/html/
+    - cp --recursive docs/quaternion_djs/* ${READTHEDOCS_OUTPUT}/html/

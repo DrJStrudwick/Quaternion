@@ -36,7 +36,7 @@ repos:
         name: pdoc
         language: system
         pass_filenames: false
-        entry: poetry run pdoc --html -f quaternion -o docs
+        entry: poetry run pdoc --html -f quaternion_djs -o docs
 # TODO: Include when/if hook is extended to check .toml files
 # - repo: https://github.com/pivotal/LicenseFinder
 #   rev: v7.1.0

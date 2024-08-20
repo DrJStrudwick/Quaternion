@@ -4,7 +4,7 @@
 # https://opensource.org/licenses/MIT
 """The test suite & functions for testing the Quaternion class."""
 
-from quaternion.quaternion import Quaternion
+from quaternion_djs.quaternion import Quaternion
 import pytest
 
 
