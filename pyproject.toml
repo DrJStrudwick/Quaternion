@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "quaternion"
-version = "0.0.1"
+version = "0.1.0"
 description = "A package for using quaternions"
 authors = ["James Strudwick <James.Strudwick@ibm.com>"]
 license = "MIT"
