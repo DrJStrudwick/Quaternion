@@ -2,6 +2,11 @@
 #
 # This software is released under the MIT License.
 # https://opensource.org/licenses/MIT
-"""Entry point for the package."""
+"""
+## Welcome.
+
+.. include:: ../README.md
+   :start-line: 1
+"""
 
 from .quaternion import Quaternion as Quaternion

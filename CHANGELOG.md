@@ -15,6 +15,7 @@ and this project adheres to [Semantic Versioning].
 
 - Updated pre-commit hooks versions
 - Moved `.coveragerc` settings into `pyproject.toml`
+- Updated pydoc to include the `README.md`
 
 ## [1.0.0] - 2024-08-20
 
