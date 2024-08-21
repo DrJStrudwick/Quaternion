@@ -16,7 +16,7 @@ repos:
       - id: pretty-format-json
         args: [--autofix]
   - repo: https://github.com/astral-sh/ruff-pre-commit
-    rev: v0.5.7
+    rev: v0.6.1
     hooks:
       - id: ruff
         args: [--fix]
@@ -26,7 +26,7 @@ repos:
     hooks:
       - id: shellcheck
   - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
+    rev: 6.3.0
     hooks:
       - id: pydocstyle
         # args: [--ignore=D107, D204, D202] #TODO: look into how to make this work
@@ -37,8 +37,14 @@ repos:
         language: system
         pass_filenames: false
         entry: poetry run pdoc --html -f quaternion_djs -o docs
-# TODO: Include when/if hook is extended to check .toml files
-# - repo: https://github.com/pivotal/LicenseFinder
-#   rev: v7.1.0
-#   hooks:
-#     - id: license-finder
+  # TODO: Include when/if hook is extended to check .toml files
+  # - repo: https://github.com/pivotal/LicenseFinder
+  #   rev: v7.1.0
+  #   hooks:
+  #     - id: license-finder
+  # TODO: Check configuration
+  # - repo: https://github.com/PyCQA/bandit
+  #   rev: "1.7.9"
+  #   hooks:
+  #     - id: bandit
+  #       args: ["--exclude", "tests"]

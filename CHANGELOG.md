@@ -5,6 +5,16 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [version] - 2024-08-21
+
+### Added
+
+- Added placeholder for bandit in pre-commit hook
+
+### Changed
+
+- Updated pre-commit hooks versions
+
 ## [1.0.0] - 2024-08-20
 
 - Full release
