@@ -54,7 +54,6 @@ class Quaternion:
         """
         # check input types
         for key, key_type in inspect.get_annotations(self.__init__).items():
-            print(f"{key=}, {key_type=}")
             if not isinstance(locals()[key], eval(str(key_type))):
                 raise TypeError(f"{key} must be {key_type}")
 

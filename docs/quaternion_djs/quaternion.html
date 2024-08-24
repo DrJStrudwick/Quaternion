@@ -117,7 +117,6 @@ hljs.highlightAll();
         &#34;&#34;&#34;
         # check input types
         for key, key_type in inspect.get_annotations(self.__init__).items():
-            print(f&#34;{key=}, {key_type=}&#34;)
             if not isinstance(locals()[key], eval(str(key_type))):
                 raise TypeError(f&#34;{key} must be {key_type}&#34;)
 

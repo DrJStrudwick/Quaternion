@@ -5,6 +5,12 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [1.1.1] - 2024-08-24
+
+### Fixed
+
+- Fixed logging statements
+
 ## [1.1.0] - 2024-08-21
 
 ### Added
