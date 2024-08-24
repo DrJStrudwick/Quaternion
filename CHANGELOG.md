@@ -5,6 +5,22 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog],
 and this project adheres to [Semantic Versioning].
 
+## [1.1.0] - 2024-08-21
+
+### Added
+
+- Added placeholder for bandit in pre-commit hook
+
+### Changed
+
+- Updated pre-commit hooks versions
+- Moved `.coveragerc` settings into `pyproject.toml`
+- Updated pydoc to include the `README.md`
+
+### Fixed
+
+- Fixed type checking for inheritance
+
 ## [1.0.0] - 2024-08-20
 
 - Full release

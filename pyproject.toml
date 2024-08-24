@@ -1,7 +1,7 @@
 [tool.poetry]
 
 name = "quaternion_djs"
-version = "1.0.0"
+version = "1.1.0"
 description = "A package for using quaternions"
 authors = ["James Strudwick <James.Strudwick@ibm.com>"]
 license = "MIT"
@@ -16,6 +16,10 @@ repository = "https://github.com/DrJStrudwick/Quaternion"
 
 [tool.poetry.dependencies]
 python = "^3.10"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
 
 
 [tool.poetry.group.test.dependencies]
@@ -34,12 +38,8 @@ pipdeptree = "^2.23.1"
 [tool.poetry.group.docs.dependencies]
 pdoc3 = "^0.11.1"
 
-[build-system]
-requires = ["poetry-core"]
-build-backend = "poetry.core.masonry.api"
-
 [tool.pytest.ini_options]
-addopts = "--cov=quaternion_djs/ --cov-config=.coveragerc --cov-report=xml"
+addopts = "--cov=quaternion_djs/ --cov-report=xml"
 testpaths = [
     "quaternion_djs",
 ]
@@ -56,3 +56,10 @@ legacy_tox_ini = """
         poetry install
         poetry run pytest
 """
+
+[tool.coverage.run]
+omit = ["*/tests/*"]
+
+[tool.coverage.report]
+fail_under = 80
+skip_empty = true

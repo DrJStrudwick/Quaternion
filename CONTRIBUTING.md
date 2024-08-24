@@ -77,16 +77,16 @@ Within our development environment we have included `pdoc3` (<https://pdoc3.gith
 If you wish to check what the documentation will look like before submitting in your cli you can run:
 
 ```shell
-pdoc --html quaternion --force -o docs
+pdoc --html quaternion_djs --force -o docs
 ```
 
-and then open `docs/quaternion/index.html` in your browser to check the outputs.
+and then open `docs/quaternion_djs/index.html` in your browser to check the outputs.
 
 Currently our documentation is hosted by `Read the Docs` (<https://readthedocs.org/dashboard/>), which is configured by `.readthedocs.yaml`. Our packages documentation can be found at (quaternion-djs.readthedocs.io) and only shows what is currently based in the `main` branch
 
 ### Testing
 
-We use `pytest` (<https://docs.pytest.org/en/stable/>) to test our code base, which can be found in `quaternion/tests` and we use `pytest-cov` (<https://pytest-cov.readthedocs.io/en/latest/readme.html>) to measure the coverage of our tests, which is configured in `.coveragerc`. Please ensure that any code contributed has tests that cover it.
+We use `pytest` (<https://docs.pytest.org/en/stable/>) to test our code base, which can be found in `quaternion_djs/tests` and we use `pytest-cov` (<https://pytest-cov.readthedocs.io/en/latest/readme.html>) to measure the coverage of our tests, which is configured in `.coveragerc`. Please ensure that any code contributed has tests that cover it.
 
 Tests can be launched by running the following in your cli:
 
